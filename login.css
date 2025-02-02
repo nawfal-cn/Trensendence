@@ -21,6 +21,7 @@ button {
 	background: linear-gradient(90deg, #ffffff, #fd77b7);
 	color: #153050;
 	animation: pop 0.3s ease-in-out;
+	visibility: hidden; /* Hide the button initially */
 }
 
 button:hover {

@@ -11,8 +11,19 @@
 
   <body>
     <a href="sign_in.html">
-      <button>Login</button>
+      <button id="loginButton">Login</button>
 		</a>
+    <script>
+      window.addEventListener('load', function() {
+          const img = new Image();
+          img.src = 'login_background.png';
+          img.onload = function() {
+            setTimeout(function() {
+                  document.getElementById('loginButton').style.visibility = 'visible';
+            }, 500); // Delay of 500 milliseconds
+          };
+      });
+    </script>
   </body>
 
 </html>
