@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(135deg, #153050, #3bb1f4, #153050, #153050, #153050, #3bb1f4, #153050);
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* vertical */
+	align-items: center; /* horizontal */
+	font-family: 'Roboto', sans-serif;
+}
+
+.back-arrow {
+  font-size: 70px;  /* Size of the arrow */
+  color: azure;      /* Arrow color */
+  position: fixed;  /* Fixed position */
+  top: 0px;        
+  left: 40px;       /* Distance from left */
+  text-decoration: none; /* Remove underline */
+  background: none; /* Optional background for visibility */
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer; /* Show pointer on hover */
+}
+
+#arrow-back {
+	height: 50px;
+	width: 65px;
+	filter: invert(1) brightness(100%);
+}
+
+
+form {
+	width:20%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1 {
+	color: aliceblue;
+	text-align: center;
+	font-size: 2.5em;
+}
+
+input {
+	margin-top: 14px;
+	width: 100%;
+	height: 90px;
+	border-radius: 20px;
+	border: none;
+	background-color: #E0E0E0;
+}
+
+a {
+	align-self: flex-end;
+	margin: 0.3em 0.5em 0.5em 0;
+	color: #ff6aae;
+}
+
+input[type="submit"] {
+	font-size: larger;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: #3bb1f4;
+	color: aliceblue;
+}
+
+input::placeholder {
+	color: #153050;
+	font-size: larger;
+}
+
+.infos {
+	font-size: large;
+	padding-left: 1em;
+}
+
+p {
+	color: aliceblue;
+	font-size: large;
+}
+
+.line-with-text {
+	display: flex;
+	align-items: center;
+	width: 22%;
+}
+
+.line-with-text::before,
+.line-with-text::after {
+	content: "";
+	flex: 1;
+	height: 0.3em;
+	min-width: 25%;
+	background-color: white;
+	margin: 0 2em;
+}
+
+span {
+	color: aliceblue;
+	font-size: large;
+}
+
+button {
+	margin-top: 20px;
+	height: 70px;
+	width: 8%;
+	border-radius: 20px;
+	border: none;
+	cursor: pointer;
+	font-size: larger;
+	font-weight: bold;
+	color: #153050;
+	background-color: #E0E0E0;
+}
+  
