@@ -80,24 +80,18 @@ body {
     display: none;
 }
 
-.password-input-wrapper {
+.password-field {
     position: relative;
     width: 300px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
 }
 
-.password-input-wrapper input {
+.password-field input {
     width: 100%;
-    padding: 10px;
-    padding-right: 40px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    background: rgba(255, 255, 255, 0.8);
-    color: #333;
 }
 
-.toggle-password {
+.eye-icon {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -107,9 +101,4 @@ body {
     cursor: pointer;
     filter: invert(0.5);
     z-index: 1;
-}
-
-.edit-icon, .save-icon {
-    flex-shrink: 0;
-    margin-left: 10px;
 }

@@ -1,7 +1,7 @@
 let originalValues = {
     1: document.getElementById("input1").value,
     2: document.getElementById("input2").value,
-    3: "password123" // Example current password (to be replaced with real backend validation)
+    3: "pass" // Example current password (to be replaced with real backend validation)
 };
 
 function enableEdit(id) {
@@ -113,5 +113,14 @@ function uploadProfilePic(event) {
             document.getElementById('profilePic').src = e.target.result;
         };
         reader.readAsDataURL(file);
+    }
+}
+
+function togglePassword(inputId) {
+    const input = document.getElementById(inputId);
+    if (input.type === "password") {
+        input.type = "text";
+    } else {
+        input.type = "password";
     }
 }
