@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Input Field</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <img src="../z-media/profile.png" alt="Profile" class="profile-pic" id="profilePic">
+        <input type="file" id="fileInput" accept="image/*" onchange="uploadProfilePic(event)">
+        <img src="../z-media/edit-image.png" alt="Edit" class="icon edit-profile" onclick="document.getElementById('fileInput').click()">
+    </div>
+    
+    <div class="input-container">
+        <input type="text" id="input1" value="Username" disabled oninput="showSaveIcon(1)">
+        <img src="../z-media/edit.png" alt="Edit" class="icon" onclick="enableEdit(1)">
+        <img src="../z-media/save.png" alt="Save" class="icon save-icon" id="saveIcon1" onclick="saveInput(1)">
+    </div>
+    <div class="input-container">
+        <input type="email" id="input2" value="user@example.com" disabled oninput="showSaveIcon(2)">
+        <img src="../z-media/edit.png" alt="Edit" class="icon" onclick="enableEdit(2)">
+        <img src="../z-media/save.png" alt="Save" class="icon save-icon" id="saveIcon2" onclick="saveInput(2)">
+    </div>
+    
+    <div class="input-container">
+        <input type="password" id="currentPassword" value="password123" disabled>
+        <img src="../z-media/edit.png" alt="Edit" class="icon" onclick="enablePasswordEdit()">
+    </div>
+    <div class="input-container password-fields" style="display: none;">
+        <input type="password" id="newPassword" placeholder="Enter new password" oninput="validatePasswords()">
+    </div>
+    <div class="input-container password-fields" style="display: none;">
+        <input type="password" id="confirmPassword" placeholder="Confirm new password" oninput="validatePasswords()">
+        <img src="../z-media/save.png" alt="Save" class="icon save-icon" id="saveIcon3" onclick="savePassword()">
+    </div>    
+    <p id="passwordError" style="color: red; display: none;">Passwords do not match or current password is incorrect.</p>
+    
+    <script src="profile.js"></script>
+</body>
+</html>
