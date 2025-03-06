@@ -14,19 +14,23 @@
 			</header>
 		</div>
 		<div id="body-div">
-			<form>
+			<form onsubmit="handleSignup(event)">
 				<h1>Sign up</h1>
 				<input class="infos" type="text" placeholder="Full name" required/>
 				<input class="infos" type="text" placeholder="Username" required/>
 				<input class="infos" type="email" placeholder="Email" required/>
 				<input class="infos" type="password" placeholder="Password" required/>
 				<input class="infos" type="password" placeholder="Confirm password" required/>
-				<input type="submit" value="SIGN UP" formaction="../main/main.html"/>
+				<input type="submit" value="SIGN UP"/>
 			</form>
 			<p>Already signed up? <a id="login-here" href="../sign_in/sign_in.html">Login here.</a></p>
-			<script>
-				window.history.replaceState(null, '', '../login/login.html'); 
-			</script>
 		</div>
+		<script>
+		function handleSignup(event) {
+			event.preventDefault(); // Prevent form from submitting normally
+			sessionStorage.setItem('isLoggedIn', 'true');
+			window.location.replace('../main/main.html');
+		}
+		</script>
 	</body>
 </html>

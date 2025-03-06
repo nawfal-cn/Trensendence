@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editable Input Field</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="profile.css">
 </head>
 <body>
@@ -25,10 +25,7 @@
     </div>
     
     <div class="input-container">
-        <div class="password-field">
-            <input type="password" id="currentPassword" value="password123" disabled>
-            <img src="../z-media/show.png" alt="Show Password" class="eye-icon" onclick="togglePassword('currentPassword')">
-        </div>
+        <input type="password" id="currentPassword" value="password123" disabled>
         <img src="../z-media/edit.png" alt="Edit" class="icon" onclick="enablePasswordEdit()">
     </div>
     <div class="input-container password-fields" style="display: none;">
@@ -46,6 +43,23 @@
     </div>    
     <p id="passwordError" style="color: red; display: none;">Passwords do not match or current password is incorrect.</p>
     
+    <div class="logout-container">
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+    
     <script src="profile.js"></script>
+    <script>
+        // Check login status when page loads
+        if (!sessionStorage.getItem('isLoggedIn')) {
+            window.location.replace('../login/login.html');
+        }
+        
+        // Prevent back navigation after logout
+        window.onpopstate = function(event) {
+            if (!sessionStorage.getItem('isLoggedIn')) {
+                window.location.replace('../login/login.html');
+            }
+        };
+    </script>
 </body>
 </html>

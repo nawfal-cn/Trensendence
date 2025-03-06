@@ -14,12 +14,12 @@
 			</header>
 		</div>
 		<div id="body-div">
-			<form>
+			<form onsubmit="handleLogin(event)">
 				<h1>Sign in</h1>
 				<input class="infos" type="text" placeholder="Username" required/>
 				<input class="infos" type="password" placeholder="Password" required/>
 				<a id="forgot-password" href="###">Forgot Password?</a>
-				<input type="submit" value="LOGIN" formaction="../main/main.html"/>
+				<input type="submit" value="LOGIN"/>
 			</form>
 			<p>Dont have an account? <a id="register-here" href="../sign_up/sign_up.html">Register here.</a></p>
 			<div class="line-with-text">
@@ -28,7 +28,11 @@
 			<button>42 INTRA</button>
 		</div>
 		<script>
-			window.history.replaceState(null, '', '../login/login.html'); 
+		function handleLogin(event) {
+			event.preventDefault(); // Prevent form from submitting normally
+			sessionStorage.setItem('isLoggedIn', 'true');
+			window.location.replace('../main/main.html');
+		}
 		</script>
 	</body>
 </html>
