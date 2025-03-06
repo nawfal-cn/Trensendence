@@ -82,7 +82,7 @@ function enablePasswordEdit() {
     const existingEyeIcon = currentPasswordInput.parentElement.querySelector('.eye-icon');
     if (!existingEyeIcon) {
         const eyeIcon = document.createElement('img');
-        eyeIcon.src = "../z-media/show.png";
+        eyeIcon.src = "../z-media/show.png";  // Start with show icon
         eyeIcon.alt = "Show Password";
         eyeIcon.className = "eye-icon";
         eyeIcon.onclick = () => togglePassword('currentPassword');
@@ -189,10 +189,14 @@ function uploadProfilePic(event) {
 
 function togglePassword(inputId) {
     const input = document.getElementById(inputId);
+    const eyeIcon = input.parentElement.querySelector('.eye-icon');
+    
     if (input.type === "password") {
         input.type = "text";
+        eyeIcon.src = "../z-media/hide.png";  // Switch to hide icon when password is visible
     } else {
         input.type = "password";
+        eyeIcon.src = "../z-media/show.png";  // Switch back to show icon when password is hidden
     }
 }
 
